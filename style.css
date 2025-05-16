@@ -1,0 +1,144 @@
+/* Global Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #a83232;
+  padding: 1em;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2em;
+}
+
+.navbar a {
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid yellow;
+}
+
+/* Banner with Overlay */
+.banner {
+  position: relative;
+  text-align: center;
+  background: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?cs=srgb&dl=pexels-chanwalrus-958545.jpg&fm=jpg') no-repeat center center/cover;
+  padding: 120px 20px;
+  color: white;
+  min-height: 300px;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 0;
+}
+
+.banner h1, .banner p {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.banner p {
+  font-size: 1.2rem;
+  color: #f9f9f9;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+section {
+  padding: 40px 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #a83232;
+  margin-bottom: 20px;
+}
+
+.menu-category h3 {
+  color: #444;
+  margin-top: 30px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.menu-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-card .price {
+  font-weight: bold;
+  float: right;
+}
+
+.recommended {
+  border: 2px solid #e67e22;
+}
+
+.badge {
+  background: #e67e22;
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 0.75em;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+iframe {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .banner h1 { font-size: 2.2rem; }
+}
